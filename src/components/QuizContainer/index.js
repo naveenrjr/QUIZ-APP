@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import Card from '../QuizCard'
 import {ActionsContainer,NextButton,PrevButton} from './style'
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 
 
@@ -23,7 +21,7 @@ export class QuizCards extends Component {
     }
 
     loadQuiz = () => {
-        const{cards,playerName} = this.props
+        const{cards} = this.props
         console.log(cards)
 
             const {currentQuestion} = this.state;
@@ -42,7 +40,7 @@ export class QuizCards extends Component {
     }
     handleCardChange = (e) =>{
       
-        const {userAnswer,correctAnswer,score} = this.state
+        const {userAnswer,correctAnswer,} = this.state
         this.setState({
             disabled:true,
             currentQuestion:this.state.currentQuestion + 1
@@ -77,7 +75,7 @@ export class QuizCards extends Component {
    } 
 
    finishHandler =() =>{
-       const {userAnswer,correctAnswer,score} = this.state
+       const {userAnswer,correctAnswer,} = this.state
        const{cards} = this.props
        if(this.state.currentQuestion===cards.length-1){
            this.setState({
@@ -108,7 +106,7 @@ export class QuizCards extends Component {
                 <div>
 
                 <h2> {questions}</h2>
-                <h4>{`Question ${currentQuestion} out of ${cards.length-1}`}</h4>
+                <h4>{`Question ${currentQuestion+1} out of ${cards.length}`}</h4>
                 {options.map(option =>(
                     <p key={option} onClick={()=>this.handleActive(option)} 
                     className={`ui floating message 

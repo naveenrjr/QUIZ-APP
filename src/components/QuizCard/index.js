@@ -1,7 +1,4 @@
 import React from 'react'
-import {Option,Button} from './style'
-import LeaderBoard from './LeaderBoard'
-
 class Card extends React.Component  {
     constructor(props) {
         super(props)
@@ -16,7 +13,7 @@ class Card extends React.Component  {
     
     
     render(){
-        const {leaderBoard,showBoard}= this.state
+        // const {leaderBoard,showBoard}= this.state
         
         const{restart,options,playerName,score} = this.props;
         console.log(options)
@@ -39,7 +36,6 @@ class Card extends React.Component  {
           
           )
     }
-
 }
 
 export default Card

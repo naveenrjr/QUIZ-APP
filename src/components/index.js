@@ -15,7 +15,7 @@ export class StartGame extends Component {
         Data.getAll()
         .then(initialData=>{
         // get any 5 randomly out of the given 20 sets
-          const allData=initialData.results.sort(() => 0.5 - Math.random()).slice(0, 3)
+          const allData=initialData.results.sort(() => 0.5 - Math.random()).slice(0, 10)
         // store the result in the state variable QuestionSet
           this.setState({
             questionSet:allData
